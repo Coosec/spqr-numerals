@@ -10,6 +10,9 @@
     "numbers",
     "spqr"
   ],
+  "files": [
+    "dest"
+  ],
   "main": "dest/spqr-numerals.umd.js",
   "jsnext:main": "src/index.js",
   "scripts": {
