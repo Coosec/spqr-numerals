@@ -58,3 +58,53 @@ describe('Spqr.toRoman', () => {
     });
   });
 });
+
+describe('Spqr.toArabic', () => {
+  it('should not convert not correct roman numerals', () => {
+    if (spqr.toArabic('IIIII') !== undefined) {
+      throw Error('Spqr.toArabic should not convert not correct roman numerals');
+    }
+    if (spqr.toArabic('Sometext') !== undefined) {
+      throw Error('Spqr.toArabic should not convert not correct roman numerals');
+    }
+    if (spqr.toArabic(20) !== undefined) {
+      throw Error('Spqr.toArabic should not convert not correct roman numerals');
+    }
+  });
+
+  it('should convert uppercase or downcase or mixed roman numerals', () => {
+    const testData = [
+      {'input': 'DcCxLvIiI', 'expected': 748},
+      {'input': 'mcm', 'expected': 1900},
+      {'input': 'MCMLxxxiv', 'expected': 1984}
+    ];
+
+    testData.forEach((e) => {
+      if (spqr.toArabic(e.input) !== e.expected) {
+        throw Error('Spqr.toArabic should convert uppercase or downcase or mixed roman numerals');
+      }
+    });
+  });
+
+  it('should returns correct arabic numbers', () => {
+    const testData = [
+      {'input': 'I', 'expected': 1},
+      {'input': 'II', 'expected': 2},
+      {'input': 'III', 'expected': 3},
+      {'input': 'IV', 'expected': 4},
+      {'input': 'V', 'expected': 5},
+      {'input': 'VIII', 'expected': 8},
+      {'input': 'DCCXLVIII', 'expected': 748},
+      {'input': 'MCM', 'expected': 1900},
+      {'input': 'MCMLXXXIV', 'expected': 1984},
+      {'input': 'MMMMMMMMCCCXCIV', 'expected': 8394},
+      {'input': 'MMMMMMMMMM', 'expected': 10000}
+    ];
+
+    testData.forEach((e) => {
+      if (spqr.toArabic(e.input) !== e.expected) {
+        throw Error('Spqr.toArabic returns wrong arabic numbers.');
+      }
+    });
+  });
+});
