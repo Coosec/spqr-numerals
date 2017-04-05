@@ -1,8 +1,16 @@
 {
   "name": "spqr-numerals",
   "version": "0.0.1",
-  "description": "",
-  "main": "dest/bundle.es5.js",
+  "description": "Roman numerals converter",
+  "keywords": [
+    "roman",
+    "numerals",
+    "converter",
+    "arabic",
+    "numbers",
+    "spqr"
+  ],
+  "main": "dest/spqr-numerals.umd.js",
   "jsnext:main": "src/index.js",
   "scripts": {
     "lint": "eslint -c config/eslint/default.json src/**/*.js tests/**/*.js",
@@ -10,6 +18,10 @@
     "build": "rollup -c config/rollup/umd.js && rollup -c config/rollup/es6.js && rollup -c config/rollup/es5.js",
     "pretest": "npm run lint",
     "test": "karma start config/karma/default.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Coosec/spqr-numerals.git"
   },
   "author": "Coosec",
   "license": "MIT",
