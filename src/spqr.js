@@ -17,6 +17,9 @@ const ROMANS_MAP = new Map([
 const Spqr = {
   toRoman(arabicNumber) {
     let romanNumeral = '';
+    if (!(arabicNumber === parseInt(arabicNumber, 10))) {
+      return ;
+    }
     if (arabicNumber <= 0 || arabicNumber > 10000) {
       return ;
     }

@@ -21,6 +21,12 @@ describe('Spqr', () => {
 });
 
 describe('Spqr.toRoman', () => {
+  it('should not convert float numbers', () => {
+    if (spqr.toRoman(1.5) !== undefined) {
+      throw Error('Spqr.toRoman should not convert float numbers');
+    }
+  });
+
   it('should not convert numbers under 1', () => {
     if (spqr.toRoman(0) !== undefined) {
       throw Error('Spqr.toRoman should not convert numbers under 1.');
@@ -36,7 +42,7 @@ describe('Spqr.toRoman', () => {
     }
   });
 
-  it('Should returns correct roman numerals', () => {
+  it('should returns correct roman numerals', () => {
     const testData = [
       {'input': 1, 'expected': 'I'},
       {'input': 2, 'expected': 'II'},
