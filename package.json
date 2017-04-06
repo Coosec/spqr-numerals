@@ -20,7 +20,8 @@
     "prebuild": "npm test",
     "build": "rollup -c config/rollup/umd.js && rollup -c config/rollup/es6.js && rollup -c config/rollup/es5.js",
     "pretest": "npm run lint",
-    "test": "karma start config/karma/default.js"
+    "test": "karma start config/karma/default.js",
+    "preversion": "npm run build"
   },
   "repository": {
     "type": "git",

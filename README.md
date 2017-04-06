@@ -1,6 +1,12 @@
 # spqr-numerals
 
-Roman numerals converter (range from 1 to 10000)
+Roman numerals converter for both browser and node environments (range from 1 to 10000)
+
+## Installation
+
+```
+npm install spqr-numerals --save
+```
 
 ## Usage
 
