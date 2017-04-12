@@ -13,7 +13,7 @@
   "files": [
     "dest"
   ],
-  "main": "dest/spqr-numerals.umd.js",
+  "main": "dest/spqr-numerals.es5.js",
   "jsnext:main": "src/index.js",
   "scripts": {
     "lint": "eslint -c config/eslint/default.json src/**/*.js tests/**/*.js",
